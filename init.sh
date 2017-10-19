@@ -31,3 +31,6 @@ chmod +x /etc/tinc/${NETNAME}/tinc-down
 
 # 生成密钥
 echo | /usr/sbin/tincd -n ${NETNAME} -K4096
+
+# 运行程序
+/usr/sbin/tincd -n ${NETNAME}

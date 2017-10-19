@@ -12,7 +12,7 @@ sudo docker run -d --privileged \
     -e IP=10.10.0.1 \
     -v ~/tinc/:/etc/tinc \
     --restart=always \
-    alpine
+    getnas/tinc
 ```
 
 ### 环境变量
