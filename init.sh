@@ -33,4 +33,4 @@ chmod +x /etc/tinc/${NETNAME}/tinc-down
 echo | /usr/sbin/tincd -n ${NETNAME} -K4096
 
 # 运行程序
-/usr/sbin/tincd -n ${NETNAME}
+/usr/sbin/tincd -n -D ${NETNAME}
