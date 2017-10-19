@@ -13,7 +13,7 @@ RUN chmod +x /init.sh
 VOLUME [ "/etc/tinc" ]
 EXPOSE 655/tcp 655/udp
 ENV NETNAME=p2pvpn
-ENV HOSTNAME=docker
+ENV HOSTNAME=vultr
 ENV SUBNET=10.10.0.1/32
 ENV IP=10.10.0.1
 
