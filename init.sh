@@ -34,5 +34,5 @@ if [ ! -d /etc/tinc/${NETNAME} ]; then
     echo | /usr/sbin/tincd -n ${NETNAME} -K4096
 else
     # 运行程序
-    /usr/sbin/tincd -n -D ${NETNAME}
+    /usr/sbin/tincd -n ${NETNAME} -D
 fi
