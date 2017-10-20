@@ -40,7 +40,7 @@ os.system("mkdir -p /etc/tinc/%s/hosts" % netname)
 
 print("创建配置文件 tinc.conf...")
 os.system("touch /etc/tinc/%s/tinc.conf" % netname)
-os.system("echo 'Name = %s' > /etc/tinc/%s/tinc.conf" % (netname, netname))
+os.system("echo 'Name = %s' > /etc/tinc/%s/tinc.conf" % (hostname, netname))
 os.system("echo 'Device = /dev/net/tun' >> /etc/tinc/%s/tinc.conf" % netname)
 
 print("创建主机文件 %s..." % hostname)
