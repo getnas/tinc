@@ -36,29 +36,29 @@ IP 地址：%s
 # TODO: 确认交互
 
 print("创建配置目录 %s..." % netname)
-os.system("mkdir -p %s/hosts" % netname)
+os.system("mkdir -p /etc/tinc/%s/hosts" % netname)
 
 print("创建配置文件 tinc.conf...")
-os.system("touch %s/tinc.conf" % netname)
-os.system("echo 'Name = %s' > %s/tinc.conf" % (netname, netname))
-os.system("echo 'Device = /dev/net/tun' >> %s/tinc.conf" % netname)
+os.system("touch /etc/tinc/%s/tinc.conf" % netname)
+os.system("echo 'Name = %s' > /etc/tinc/%s/tinc.conf" % (netname, netname))
+os.system("echo 'Device = /dev/net/tun' >> /etc/tinc/%s/tinc.conf" % netname)
 
 print("创建主机文件 %s..." % hostname)
-os.system("touch %s/hosts/%s" % (netname, hostname))
-os.system("echo 'Subnet = %s' > %s/hosts/%s" % (subnet, netname, hostname))
+os.system("touch /etc/tinc/%s/hosts/%s" % (netname, hostname))
+os.system("echo 'Subnet = %s' > /etc/tinc/%s/hosts/%s" % (subnet, netname, hostname))
 
 # TODO: 解决 ifconfig 被新版本系统弃用的问题
 
 print("创建网络配置文件...")
-os.system("touch %s/tinc-up" % netname)
-os.system("echo '#!/bin/sh' > %s/tinc-up" % netname)
-os.system("echo 'ifconfig $INTERFACE %s netmask 255.255.255.0' >> %s/tinc-up" % (ip, netname))
-os.system("touch %s/tinc-down" % netname)
-os.system("echo '#!/bin/sh' > %s/tinc-down" % netname)
-os.system("echo 'ifconfig $INTERFACE down' >> %s/tinc-down" % netname)
+os.system("touch /etc/tinc/%s/tinc-up" % netname)
+os.system("echo '#!/bin/sh' > /etc/tinc/%s/tinc-up" % netname)
+os.system("echo 'ifconfig $INTERFACE %s netmask 255.255.255.0' >> /etc/tinc/%s/tinc-up" % (ip, netname))
+os.system("touch /etc/tinc/%s/tinc-down" % netname)
+os.system("echo '#!/bin/sh' > /etc/tinc/%s/tinc-down" % netname)
+os.system("echo 'ifconfig $INTERFACE down' >> /etc/tinc/%s/tinc-down" % netname)
 
 print("赋予网络脚本可执行权限...")
-os.system("chmod -v +x %s/tinc-{up,down}" % netname)
+os.system("chmod -v +x /etc/tinc/%s/tinc-{up,down}" % netname)
 
 print("生成密钥...")
 os.system("echo | /usr/sbin/tincd -n %s -K4096" % netname)
