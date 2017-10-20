@@ -63,4 +63,4 @@ os.system("chmod -v +x /etc/tinc/%s/tinc-{up,down}" % netname)
 print("生成密钥...")
 os.system("echo | /usr/sbin/tincd -n %s -K4096" % netname)
 
-print("创建完成，配置文件位于：XXXX")
+print("创建完成，配置文件位于：/etc/tinc/%s" % netname)
