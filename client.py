@@ -59,7 +59,8 @@ os.system("echo '#!/bin/sh' > /etc/tinc/%s/tinc-down" % netname)
 os.system("echo 'ifconfig $INTERFACE down' >> /etc/tinc/%s/tinc-down" % netname)
 
 print("赋予网络脚本可执行权限...")
-os.system("chmod -v +x /etc/tinc/%s/tinc-{up,down}" % netname)
+os.system("chmod -v +x /etc/tinc/%s/tinc-up" % netname)
+os.system("chmod -v +x /etc/tinc/%s/tinc-down" % netname)
 
 print("生成密钥...")
 os.system("echo | /usr/sbin/tincd -n %s -K4096" % netname)
