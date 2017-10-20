@@ -29,7 +29,8 @@ if [ ! -d /etc/tinc/${NETNAME} ]; then
     echo "ifconfig \$INTERFACE down"  >> /etc/tinc/${NETNAME}/tinc-down
 
     # 赋予脚本执行权
-    chmod -v +x /etc/tinc/${NETNAME}/tinc-{up,down}
+    chmod -v +x /etc/tinc/${NETNAME}/tinc-up
+    chmod -v +x /etc/tinc/${NETNAME}/tinc-down
 
     # 生成密钥
     echo | /usr/sbin/tincd -n ${NETNAME} -K4096
