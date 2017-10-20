@@ -23,6 +23,7 @@ sudo docker run -d --privileged \
 * `HOSTNAME` - 本机设备名，默认值：`vultr`
 * `SUBNET` - VPN 子网地址，默认值：`10.10.0.1/32`
 * `IP` - IP 地址，默认值：`10.10.0.1`
+* `PUBLIC_IP` - 主机公网 IP 地址或域名
 
 举个例子，比如，你想设置网络名为 `myvpn`，主机名为 `getnas`，则可以使用以下命令创建容器：
 

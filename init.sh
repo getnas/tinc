@@ -3,6 +3,7 @@
 # ${HOSTNAME} - 本机设备名
 # ${SUBNET} - VPN 子网地址
 # ${IP} - IP 地址
+# ${PUBLIC_IP} - 主机公网 IP 地址
 
 if [ ! -d /etc/tinc/${NETNAME} ]; then
     mkdir -p /etc/tinc/${NETNAME}/hosts
@@ -14,6 +15,7 @@ if [ ! -d /etc/tinc/${NETNAME} ]; then
 
     # 创建主机文件
     touch /etc/tinc/${NETNAME}/hosts/${HOSTNAME}
+    echo "Address = ${PUBLIC_IP}" > /etc/tinc/${NETNAME}/hosts/${HOSTNAME}
     echo "Subnet = ${SUBNET}" > /etc/tinc/${NETNAME}/hosts/${HOSTNAME}
 
     # 创建 tinc-up
