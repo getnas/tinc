@@ -16,7 +16,7 @@ if [ ! -d /etc/tinc/${NETNAME} ]; then
     # 创建主机文件
     touch /etc/tinc/${NETNAME}/hosts/${HOSTNAME}
     echo "Address = ${PUBLIC_IP}" > /etc/tinc/${NETNAME}/hosts/${HOSTNAME}
-    echo "Subnet = ${SUBNET}" > /etc/tinc/${NETNAME}/hosts/${HOSTNAME}
+    echo "Subnet = ${SUBNET}" >> /etc/tinc/${NETNAME}/hosts/${HOSTNAME}
 
     # 创建 tinc-up
     touch /etc/tinc/${NETNAME}/tinc-up
